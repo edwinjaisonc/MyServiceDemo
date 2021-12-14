@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "MyServiceDemo"
 include ':app'
 include ':cameraserviceinterface'
+project(":cameraserviceinterface").projectDir = new File(settingsDir, "../MyServiceDemo/cameraserviceinterface")
