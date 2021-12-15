@@ -15,7 +15,7 @@ public class CameraService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
 
-        Log.d("CameraService","OnBind");
+//        Log.d("CameraService","OnBind");
         return new ServiceBaseInterface();
 
     }
