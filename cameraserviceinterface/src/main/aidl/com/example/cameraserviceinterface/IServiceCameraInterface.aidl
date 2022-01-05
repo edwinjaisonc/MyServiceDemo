@@ -6,4 +6,7 @@ package com.example.cameraserviceinterface;
 interface IServiceCameraInterface {
 
    String getPreviousActiveCamera();
+   void startCamera();
+   void setSetting(boolean status);
+   void getSettings(int status);
 }

@@ -15,4 +15,21 @@ public class ServiceCameraInterface extends IServiceCameraInterface.Stub {
     public String getPreviousActiveCamera() throws RemoteException {
         return mCameraAppServiceManager.getPreviousActiveCamera();
     }
+
+    @Override
+    public void startCamera() throws RemoteException {
+        mCameraAppServiceManager.startCamera();
+    }
+
+    @Override
+    public void setSetting(boolean status) throws RemoteException {
+        mCameraAppServiceManager.setSetting(status);
+    }
+
+    @Override
+    public void getSettings(int status) throws RemoteException {
+        mCameraAppServiceManager.getSettings(status);
+    }
+
+
 }
