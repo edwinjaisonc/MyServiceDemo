@@ -12,12 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Intent intent = new Intent(this,CameraService.class);
         startService(new Intent(this,CameraService.class));
-//        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
-//            startForegroundService(intent);
-//        }else {
-//            this.startService(intent);
-//        }
+
     }
 }

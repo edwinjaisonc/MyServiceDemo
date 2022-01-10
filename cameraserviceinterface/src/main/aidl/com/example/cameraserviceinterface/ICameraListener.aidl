@@ -1,10 +1,12 @@
-// ICameraListener.aidl
 package com.example.cameraserviceinterface;
 
-// Declare any non-default types here with import statements
 
 interface ICameraListener {
 
+            /**
+                 * @brief Method to notify camera status.
+                 * @param status : status of camera.
+                 */
             void notifyCameraStatus(boolean status);
 
 }

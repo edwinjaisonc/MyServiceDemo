@@ -2,7 +2,7 @@ package com.example.myservicedemo;
 
 import android.content.SharedPreferences;
 import android.os.Handler;
-import android.os.IBinder;
+
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.Log;
@@ -12,6 +12,9 @@ import static com.example.cameraserviceinterface.constants.CameraHmiServiceConst
 
 import java.util.HashMap;
 
+/**
+ * @brief Camera app service manager which will manage all service common functionality's.
+ */
 public class CameraAppServiceManager {
     private final RemoteCallbackList<ICameraListener> mCameraNoticationCallbackList = new RemoteCallbackList<>();
     private Handler mHandler = new Handler();
@@ -58,14 +61,28 @@ public class CameraAppServiceManager {
         }
     };
 
+
+    /**
+     * @brief Method to get previous active camera
+     * @return camera : camera
+     */
     public String getPreviousActiveCamera() {
         return "Rear View Camera";
     }
 
+    /**
+     * @brief Api to register async connection
+     * @param mCameraListener : ICameraListener object
+     */
     public void registerAsyncConnection(ICameraListener mCameraListener) {
         mCameraNoticationCallbackList.register(mCameraListener);
     }
 
+
+    /**
+     * @brief Api to unregister async connection
+     * @param mCameraListener : ICameraListener object
+     */
     public void unregisterAsyncConnection(ICameraListener mCameraListener) {
         mCameraNoticationCallbackList.unregister(mCameraListener);
     }
@@ -76,6 +93,13 @@ public class CameraAppServiceManager {
     }
 
     private HashMap<Integer,Boolean> hashMap = new HashMap<Integer,Boolean>();
+
+
+    /**
+     *
+     * @brief Method to set the value of settings
+     * @param status
+     */
     public void setSetting(boolean status){
 
         hashMap.put(1,status);
@@ -83,6 +107,12 @@ public class CameraAppServiceManager {
 
     }
 
+    /**
+     *
+     * @brief Method to get the value of settings
+     * @param key
+     * @return key:status of settings
+     */
     public Boolean getSettings(int key){
         Log.d("setting status","status");
         return hashMap.get(key);
